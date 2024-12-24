@@ -11,9 +11,21 @@
       .no-print {
         display: none;
       }
+      .social-icons {
+        display: none; /* Hide social media icons */
+      }
+      .dark-mode-toggle {
+        display: none; /* Hide dark mode toggle button */
+      }
       body {
+        background-color: #f7fafc !important; /* Set light mode background */
+        color: #1a202c !important; /* Set light mode text color */
         margin: 0;
         padding: 0;
+      }
+      body.dark {
+        background-color: #000000 !important; /* Set dark mode background for print */
+        color: #e2e8f0 !important; /* Set dark mode text color for print */
       }
       .print-container {
         display: block;
@@ -46,35 +58,63 @@
         order: 1;
       }
     }
+
+    /* Dark mode styles */
+    body.dark {
+      background-color: #1a202c;
+      color: #e2e8f0;
+    }
+
+    body.dark .bg-gray-800 {
+      background-color: #2d3748 !important;
+    }
+
+    body.dark .bg-white {
+      background-color: #2d3748 !important;
+      color: #e2e8f0;
+    }
+
+    body.dark .text-gray-700 {
+      color: #cbd5e0 !important;
+    }
+
+    body.dark .text-gray-600 {
+      color: #a0aec0 !important;
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
+  <!-- Dark Mode Toggle -->
+  <div class="fixed top-4 right-4 z-50 dark-mode-toggle no-print">
+    <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 shadow">
+      <i id="toggle-icon" class="fas fa-moon text-gray-800"></i>
+    </button>
+  </div>
+
+  <!-- Main Content -->
   <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-8 print-container">
     <!-- Header Section -->
-    <div class="flex items-center bg-gray-800 text-white p-6  ">
-      <div class="w-32 h-32 rounded-lg overflow-hidden border-4 border-gray-700 mr-6">
-        <img src="https://i.postimg.cc/Y0R0DGvt/22222-removebg-preview.png" alt="Profile Picture" class="w-full h-full object-cover">
+    <div class="flex items-center bg-gray-800 text-white p-6">
+      <div class="w-32 h-32 rounded-lg overflow-hidden mr-6 no-print">
+        <img src="https://i.postimg.cc/Rhx3R1H7/imranff.png" alt="Profile Picture" class="w-full h-full object-cover">
       </div>
-      <div >
+      <div>
         <h1 class="text-3xl font-bold">Md Imran Hasan Mahin</h1>
         <p class="text-lg">Web Developer</p>
-        <div class="flex space-x-4 mt-2 center" >
-          <a href="https://github.com/mdimranhasanmahin" class="text-blue-600 hover:text-blue-200">
+        <div class="flex space-x-4 mt-2 social-icons">
+          <a href="https://github.com/mdimranhasanmahin" class="text-blue-600 hover:text-blue-200 no-print">
             <i class="fab fa-github fa-lg"></i>
           </a>
-
-          <a href="https://github.com/mdimranhasanmahin" class="text-blue-500 hover:text-blue-300">
+          <a href="https://github.com/mdimranhasanmahin" class="text-blue-500 hover:text-blue-300 no-print">
             <i class="fab fa-linkedin fa-lg"></i>
           </a>
-          
-          <a href="https://www.facebook.com/MD.IMRAN.HASAN.MAHIN" class="text-blue-400 hover:text-pink-300">
+          <a href="https://www.facebook.com/MD.IMRAN.HASAN.MAHIN" class="text-blue-400 hover:text-pink-300 no-print">
             <i class="fab fa-facebook fa-lg"></i>
           </a>
         </div>
       </div>
     </div>
-
-    <!-- Main Content -->
+    <!-- Rest of your content continues... -->
     <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Left Column -->
       <div class="left-column">
@@ -166,8 +206,36 @@
       </div>
     </div>
   </div>
+    <!-- Print Button -->
+    <button onclick="window.print()" class="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded shadow hover:bg-blue-700 no-print">Print CV</button>
+  </div>
 
-  <!-- Print Button -->
-  <button onclick="window.print()" class="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded shadow hover:bg-blue-700 no-print">Print CV</button>
+  <script>
+    // Dark Mode Toggle Logic
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const toggleIcon = document.getElementById('toggle-icon');
+    const body = document.body;
+
+    // Load saved mode from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggleIcon.classList.remove('fa-moon');
+      toggleIcon.classList.add('fa-sun');
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark');
+
+      if (body.classList.contains('dark')) {
+        toggleIcon.classList.remove('fa-moon');
+        toggleIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleIcon.classList.remove('fa-sun');
+        toggleIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
