@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume</title>
+  <title>Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
@@ -11,21 +11,9 @@
       .no-print {
         display: none;
       }
-      .social-icons {
-        display: none; /* Hide social media icons */
-      }
-      .dark-mode-toggle {
-        display: none; /* Hide dark mode toggle button */
-      }
       body {
-        background-color: #f7fafc !important; /* Set light mode background */
-        color: #1a202c !important; /* Set light mode text color */
         margin: 0;
         padding: 0;
-      }
-      body.dark {
-        background-color: #000000 !important; /* Set dark mode background for print */
-        color: #e2e8f0 !important; /* Set dark mode text color for print */
       }
       .print-container {
         display: block;
@@ -85,9 +73,9 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Dark Mode Toggle -->
-  <div class="fixed top-4 right-4 z-50 dark-mode-toggle no-print">
-    <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 shadow">
-      <i id="toggle-icon" class="fas fa-moon text-gray-800"></i>
+  <div class="fixed top-4 right-4 z-50">
+    <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 shadow no-print">
+      <i id="toggle-icon" class="fas fa-moon text-gray-800 no-print"></i>
     </button>
   </div>
 
@@ -95,13 +83,13 @@
   <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-8 print-container">
     <!-- Header Section -->
     <div class="flex items-center bg-gray-800 text-white p-6">
-      <div class="w-32 h-32 rounded-lg overflow-hidden mr-6 no-print">
-        <img src="https://i.postimg.cc/Rhx3R1H7/imranff.png" alt="Profile Picture" class="w-full h-full object-cover">
+      <div class="w-32 h-32 rounded-lg overflow-hidden mr-6">
+        <img src="https://i.postimg.cc/Rhx3R1H7/imranff.png" alt="Profile Picture" class="w-full h-full object-cover no-print">
       </div>
       <div>
         <h1 class="text-3xl font-bold">Md Imran Hasan Mahin</h1>
         <p class="text-lg">Web Developer</p>
-        <div class="flex space-x-4 mt-2 social-icons">
+        <div class="flex space-x-4 mt-2">
           <a href="https://github.com/mdimranhasanmahin" class="text-blue-600 hover:text-blue-200 no-print">
             <i class="fab fa-github fa-lg"></i>
           </a>
@@ -114,98 +102,100 @@
         </div>
       </div>
     </div>
-    <!-- Rest of your content continues... -->
-    <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Left Column -->
-      <div class="left-column">
-        <!-- Education -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mb-4">Education</h2>
-        <ul>
-          <li class="mb-4">
-            <h3 class="font-semibold">2022 - 2023</h3>
-            <p>Secondary School Certificate</p>
-            <p class="text-sm text-gray-600">Ahmed Bawany Academy School & College</p>
-          </li>
-          <li>
-            <h3 class="font-semibold">2024 - 2025</h3>
-            <p>Higher Secondary School Certificate</p>
-            <p class="text-sm text-gray-600">Hamdard Public College</p>
-          </li>
-        </ul>
-
-        <!-- Skills -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Skills</h2>
-        <ul class="list-disc pl-6">
-          <li>Web Developeing Skills</li>
-          <li>Technical Skills</li>
-          <li>Management Skills</li>
-          <li>Communication Skills</li>
-          <li>Leadership Skills</li>
-        </ul>
-        <!-- Languages -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Languages</h2>
-        <ul class="list-disc pl-6">
-          <li>Bangla (Fluent)</li>
-          <li>English (Fluent)</li>
-          <li>Hindi (Basic)</li>
-          <li>Urdu (Basic)</li>
-        </ul>
-
-        <!-- Contact -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Contact</h2>
-        <ul>
-          <li><b>Email:</b> mdimranhasanmahin08@gmail.com</li>
-          <li><b>Phone:</b><br> 0829906616</li>
-          <li><b>Address:</b> 15,Armenian Street,Amanitola,Dhaka,Bangladesh</li>
-        </ul>
-      </div>
-
-      <!-- Right Column -->
-      <div class="md:col-span-2 right-column">
-        <!-- Profile Info -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mb-4">Profile Info</h2>
-        <p class="text-gray-700 mb-4">I am a passionate web developer skilled in HTML, CSS, Tailwind CSS, JavaScript, and C programming. I love creating modern, responsive, and user-friendly websites that provide seamless user experiences.</p>
-         <!-- My Projects -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Projects</h2>
-        <div class="space-y-4">
-          <div>
-            <a href="https://hello-ai-five.vercel.app/"><h3 class="font-semibold">1. Hello AI</h3></a>
-            <p class="text-sm text-gray-600">A cutting-edge AI-based web application that showcases the power of artificial intelligence. This project demonstrates modern UI design and interactive functionalities to enhance user engagement.</p>
-            <p class="text-gray-700">Key Features:</p>
-            <ul type="square" class="list-disc pl-6">
-              <li>AI-driven functionalities</li>
-              <li>User-friendly and responsive design</li>
-              <li>Developed with HTML, CSS, JavaScript, and Tailwind CSS</li>
-            </ul>
-          </div>
-          <div>
-            <a href="https://mdimranhasanmahin.github.io/Image-Filter-Studio/"><h3 class="font-semibold">2. Image Filter Studio</h3></a>
-            <p class="text-sm text-gray-600">An interactive tool for applying real-time image filters. Users can enhance their photos with various effects and preview changes instantly.</p>
-            <p class="text-gray-700">Key Features:</p>
-            <ul type="square" class="list-disc pl-6">
-              <li>Real-time image filtering</li>
-              <li>Interactive and easy-to-use interface</li>
-              <li>Developed with HTML, CSS, and JavaScript</li>
-            </ul>
-          </div>
-        <!-- Experience -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Experience</h2>
-        <div class="space-y-4">
-          <div>
-            <h3 class="font-semibold">General Secretary (IT club)</h3>
-            <p class="text-sm text-gray-600">Hamdard Public Collage | 2024 - 2025</p>
-            <p class="text-gray-700">As the General Secretary of our college IT club, I actively lead and organize events, workshops, and initiatives to promote technological knowledge and innovation among students. My role involves teamwork, communication, and strategic planning to create a thriving learning environment.</p>
-          </div>
+    <!-- Your other content from the file continues... -->
+     <!-- Main Content -->
+     <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Left Column -->
+        <div class="left-column">
+          <!-- Education -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mb-4">Education</h2>
+          <ul>
+            <li class="mb-4">
+              <h3 class="font-semibold">2022 - 2023</h3>
+              <p>Secondary School Certificate</p>
+              <p class="text-sm text-gray-600">Ahmed Bawany Academy School & College</p>
+            </li>
+            <li>
+              <h3 class="font-semibold">2024 - 2025</h3>
+              <p>Higher Secondary School Certificate</p>
+              <p class="text-sm text-gray-600">Hamdard Public College</p>
+            </li>
+          </ul>
+  
+          <!-- Skills -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Skills</h2>
+          <ul class="list-disc pl-6">
+            <li>Web Developeing Skills</li>
+            <li>Technical Skills</li>
+            <li>Management Skills</li>
+            <li>Communication Skills</li>
+            <li>Leadership Skills</li>
+          </ul>
+          <!-- Languages -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Languages</h2>
+          <ul class="list-disc pl-6">
+            <li>Bangla (Fluent)</li>
+            <li>English (Fluent)</li>
+            <li>Hindi (Basic)</li>
+            <li>Urdu (Basic)</li>
+          </ul>
+  
+          <!-- Contact -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Contact</h2>
+          <ul>
+            <li><b>Email:</b> mdimranhasanmahin08@gmail.com</li>
+            <li><b>Phone:</b><br> 0829906616</li>
+            <li><b>Address:</b> 15,Armenian Street,Amanitola,Dhaka,Bangladesh</li>
+          </ul>
         </div>
-
-        <!-- Achievements -->
-        <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Achievements</h2>
-        <ul class="list-disc pl-6">
-          <li>2025 - Volunteer in HPC Mega Carnival 2025 </li>
-        </ul>
+  
+        <!-- Right Column -->
+        <div class="md:col-span-2 right-column">
+          <!-- Profile Info -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mb-4">Profile Info</h2>
+          <p class="text-gray-700 mb-4">I am a passionate web developer skilled in HTML, CSS, Tailwind CSS, JavaScript, and C programming. I love creating modern, responsive, and user-friendly websites that provide seamless user experiences.</p>
+           <!-- My Projects -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Projects</h2>
+          <div class="space-y-4">
+            <div>
+              <a href="https://hello-ai-five.vercel.app/"><h3 class="font-semibold">1. Hello AI</h3></a>
+              <p class="text-sm text-gray-600">A cutting-edge AI-based web application that showcases the power of artificial intelligence. This project demonstrates modern UI design and interactive functionalities to enhance user engagement.</p>
+              <p class="text-gray-700">Key Features:</p>
+              <ul type="square" class="list-disc pl-6">
+                <li>AI-driven functionalities</li>
+                <li>User-friendly and responsive design</li>
+                <li>Developed with HTML, CSS, JavaScript, and Tailwind CSS</li>
+              </ul>
+            </div>
+            <div>
+              <a href="https://mdimranhasanmahin.github.io/Image-Filter-Studio/"><h3 class="font-semibold">2. Image Filter Studio</h3></a>
+              <p class="text-sm text-gray-600">An interactive tool for applying real-time image filters. Users can enhance their photos with various effects and preview changes instantly.</p>
+              <p class="text-gray-700">Key Features:</p>
+              <ul type="square" class="list-disc pl-6">
+                <li>Real-time image filtering</li>
+                <li>Interactive and easy-to-use interface</li>
+                <li>Developed with HTML, CSS, and JavaScript</li>
+              </ul>
+            </div>
+          <!-- Experience -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Experience</h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold">General Secretary (IT club)</h3>
+              <p class="text-sm text-gray-600">Hamdard Public Collage | 2024 - 2025</p>
+              <p class="text-gray-700">As the General Secretary of our college IT club, I actively lead and organize events, workshops, and initiatives to promote technological knowledge and innovation among students. My role involves teamwork, communication, and strategic planning to create a thriving learning environment.</p>
+            </div>
+          </div>
+  
+          <!-- Achievements -->
+          <h2 class="text-xl font-bold border-b-2 border-gray-800 mt-8 mb-4">Achievements</h2>
+          <ul class="list-disc pl-6">
+            <li>2025 - Volunteer in HPC Mega Carnival 2025 </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  
     <!-- Print Button -->
     <button onclick="window.print()" class="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded shadow hover:bg-blue-700 no-print">Print CV</button>
   </div>
